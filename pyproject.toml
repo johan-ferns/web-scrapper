@@ -1,9 +1,1 @@
-[project]
-name = "web-scrapper"
-version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-    "playwright>=1.58.0",
-]
+[build-system]\nrequires = ["setuptools>=61.0", "wheel"]\nbuild-backend = "setuptools.build_meta"\n\n[project]\nname = "web-scrapper"\nversion = "0.1.0"\ndescription = "Portable Playwright-based web scraper for air-gapped systems"\nreadme = "README.md"\nrequires-python = ">=3.12"\nlicense = {text = "MIT"}\nauthors = [\n    {name = "Johan Fernandes", email = "johan.fernandes@statcan.gc.ca"}\n]\nkeywords = ["web-scraping", "playwright", "headless-browser", "air-gapped", "offline"]\nclassifiers = [\n    "Development Status :: 3 - Alpha",\n    "Intended Audience :: Developers",\n    "License :: OSI Approved :: MIT License",\n    "Programming Language :: Python :: 3",\n    "Programming Language :: Python :: 3.12",\n    "Topic :: Internet :: WWW/HTTP :: Browsers",\n    "Topic :: Software Development :: Libraries :: Python Modules",\n]\n\ndependencies = [\n    "playwright>=1.58.0",\n]\n\n[project.optional-dependencies]\ndev = [\n    "pytest>=7.0",\n    "pytest-playwright>=0.3.0",\n    "black>=23.0",\n    "ruff>=0.1.0",\n]\n\n[project.scripts]\nweb-scrapper = "web_scrapper.scraper:main"\n\n[tool.setuptools]\npackage-dir = {"" = "src"}\n\n[tool.setuptools.packages.find]\nwhere = ["src"]\n\n[tool.setuptools.package-data]\nweb_scrapper = ["browsers/**/*"]\n\n[tool.black]\nline-length = 100\ntarget-version = ["py312"]\n\n[tool.ruff]\nline-length = 100\ntarget-version = "py312"
